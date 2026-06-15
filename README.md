@@ -64,20 +64,20 @@ None — built completely from scratch to demonstrate fundamental web developmen
 
 ### Welcome Page
 
-<img width="1902" height="941" alt="image" src="https://github.com/user-attachments/assets/ea888301-f263-4b5f-ac7b-a560f45555a3" />
+*<img width="1911" height="1064" alt="image" src="https://github.com/user-attachments/assets/12ce7fc1-ec2b-4c0c-8352-dff5cbec3d83" />*
 
 
 ### Registration Page
 
-*<img width="1905" height="933" alt="image" src="https://github.com/user-attachments/assets/3c76c62e-9bcb-49a6-a85d-6aa58a84a846" />*
+*<img width="1903" height="911" alt="image" src="https://github.com/user-attachments/assets/fd8cb1e2-cb59-49b5-b7c1-18e1e268eb8d" />*
 
 ### User Profile
 
-*Add screenshot here*
+*<img width="1876" height="891" alt="image" src="https://github.com/user-attachments/assets/9bc7a670-db2d-46e6-8da9-d12fd9bea001" />*
 
 ### FAQ Page
 
-*Add screenshot here*
+*<img width="1909" height="1070" alt="image" src="https://github.com/user-attachments/assets/9b2f6cf3-f622-4224-a51f-b04eb3916b9a" />*
 
 ---
 
@@ -88,7 +88,7 @@ None — built completely from scratch to demonstrate fundamental web developmen
 1. Download or clone the repository
 
 ```bash
-git clone https://github.com/yourusername/TheFaceBook.git
+git clone https://github.com/aLeXHan0318/The-Face-Book-Demo-.git
 ```
 
 2. Open the project folder
