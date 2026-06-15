@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>UserProfile</title>
+</head>
+<body>
+   <div class="topbar">
+    <div class="topbar-inner">
+      <span class="logo">[ TheFaceBook]</span>
+      <span class="home-button-top"><a href="HomePage.html">Home</a></span>
+      <span class="login-button-top"><a href="registerPage.html">Login</a></span>
+      <span class="register-button-top"><a href="registerPage.html">Register</a></span>
+      <span class="about-button-top"><a href="aboutPage.html">About</a></span>
+      <span class="user-profile-button-top"><a href="userProfile.html">Profile</a></span>
+      <span class="faq-page-button-top"><a href="faqPage.html">FAQ</a></span>
+      <span class="log-out-button-top"><a href="welcomePage.html">Log Out</a></span>
+    </div>
+   </div>
+
+  <div class="contentRow">
+    <div class="loginSection">
+
+  <form class="loginBox" id="searchForm" action="#" method="get">
+    <div class="searchRow">
+      <input class="loginInput" id="q" type="text" name="q">
+      <button class="miniBtn searchGoBtn" type="submit"><a href="404NotFound.html">Search</a></button>
+    </div>
+    <div class="searchLabel">quick search</div>
+  </form>
+
+  <div class="sideMenu">
+    <ul class="sideList">
+      <li>
+        <a class="sideLink" href="404NotFound.html">My Profile</a>
+        <a class="sideEditLink" href="404NotFound.html">[ edit ]</a>
+      </li>
+      <li><a class="sideLink" href="404NotFound.html">My Friends</a></li>
+      <li><a class="sideLink" href="404NotFound.html">My Groups</a></li>
+      <li><a class="sideLink" href="404NotFound.html">My Parties</a></li>
+      <li><a class="sideLink" href="404NotFound.html">My Messages</a></li>
+      <li><a class="sideLink" href="404NotFound.html">My Account</a></li>
+      <li><a class="sideLink" href="404NotFound.html">My Privacy</a></li>
+    </ul>
+  </div>
+
+</div>
+
+
+<div class="registerSection">
+    <div class="register-bar">
+      <div class="title">Profile (This is you)</div>
+    </div>
+
+    <div class="register-content-bar">
+    </div>
+
+    <div class="register-content-register">
+      <div class="register-content-info">
+        <div class="register-content-register">
+  <div class="profileGrid">
+
+    <!-- left: picture box -->
+<div class="profileBox">
+  <div class="profileBoxBar">
+    <span>Picture</span>
+    <a class="profileEdit" href="404NotFound.html">[ edit ]</a>
+  </div>
+
+  <div class="profileBoxBody">
+    <img id="profilePic"
+         class="profilePic"
+         src="images/default-profile.png"
+         alt="profile picture">
+
+    <div class="picTools">
+      <input type="file" id="picInput" accept="image/*">
+      <button class="miniBtn" id="removePicBtn" type="button">remove</button>
+    </div>
+
+    <div class="picHint">
+      (jpg/png, local only)
+    </div>
+  </div>
+</div>
+
+
+    <!-- right: info box -->
+    <div class="profileBox">
+      <div class="profileBoxBar">
+        <span>Information</span>
+        <a class="profileEdit" href="404NotFound.html">[ edit ]</a>
+      </div>
+
+      <div class="profileBoxBody profileInfo">
+        <p><b>Name:</b> <span id="userName"></span></p>
+        <p><b>Email:</b> <span id="userEmail"></span></p>
+        <p><b>Status:</b> <span id="userStatus"></span></p>
+      
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+   <div class="copyright" >
+        <h1 class = "copyright-WORD" id = "footer">
+            <a href="aboutPage.html" style="color:#4E6AA3">about</a> 
+            <a href="404NotFound.html" style="color:#4E6AA3">contact</a>
+            <a href="faqPage.html" style="color: #4E6AA3;">faq</a> 
+            <a href="404NotFound.html" style="color: #4E6AA3;">terms</a>
+            <a href="404NotFound.html" style="color: #4E6AA3;">Privacy</a>
+          </h1>
+        <h1 class = "copyright-WORD">a Alex Han production</h1>
+        <h1 class = "copyright-WORD">___ ©2026 </h1>
+    </div>
+
+
+<script>
+  var email = localStorage.getItem("currentUserEmail");
+
+  if (email === null) {
+    window.location.href = "404NotFound.html";
+  } else {
+    document.getElementById("userEmail").innerText = email;
+    document.getElementById("userName").innerText =
+      localStorage.getItem("currentUserName") || "";
+    document.getElementById("userStatus").innerText =
+      localStorage.getItem("currentUserStatus") || "";
+  }
+
+  var input = document.getElementById("picInput");        
+  var img = document.getElementById("profilePic");        
+  var removeBtn = document.getElementById("removePicBtn");
+
+  var saved = localStorage.getItem("myProfilePic");
+  if (saved) {
+    img.src = saved;
+  }
+
+  input.addEventListener("change", function () {
+    var file = input.files[0];
+    if (!file) return;
+
+    if (!file.type.startsWith("image/")) {
+      alert("Please choose a picture (jpg/png).");
+      input.value = "";
+      return;
+    }
+
+    if (file.size > 1024 * 1024) {
+      alert("Too big. Please use a picture under 1MB.");
+      input.value = "";
+      return;
+    }
+
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      var dataUrl = e.target.result;
+      img.src = dataUrl;                     
+      localStorage.setItem("myProfilePic", dataUrl); 
+    };
+    reader.readAsDataURL(file);
+  });
+
+  removeBtn.addEventListener("click", function () {
+    localStorage.removeItem("myProfilePic");
+    img.src = "images/default-profile.png"; 
+    input.value = "";
+  });
+</script>
+
+
+</body>
+</html>

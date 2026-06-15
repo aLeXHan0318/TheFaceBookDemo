@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Welcome</title>
+</head>
+
+<body>
+
+  <!-- Top Bar -->
+   <div class="topbar">
+    <div class="topbar-inner">
+      <span class="logo">[ TheFaceBook ]</span>
+
+      <span class="login-button-top"><a href="registerPage.html">Login</a></span>
+      <span class="register-button-top"><a href="registerPage.html">Register</a></span>
+      <span class="about-button-top"><a href="aboutPage.html">About</a></span>
+      <span class="user-profile-button-top"><a href="userProfile.html">Profile</a></span>
+    </div>
+   </div>
+
+  <!-- Main Box -->
+<div class="contentRow">
+
+  <div class="loginSection">
+  <form class="loginBox" id="loginForm" action="#" method="post">
+
+    <div class="loginRow">
+      <label class="loginLabel" for="email">Email:</label>
+      <input class="loginInput" id="email" type="text" name="email" required>
+    </div>
+
+    <div class="loginRow">
+      <label class="loginLabel" for="password">Password:</label>
+      <input class="loginInput" id="password" type="password" name="password" required>
+    </div>
+
+    <div class="loginBtns">
+      <button class="miniBtn" type="submit">login</button>
+    </div>
+
+  </form>
+</div>
+
+
+
+  <div class="registerSection">
+    <div class="register-bar">
+      <div class="title">Welcome to ___</div>
+    </div>
+
+    <div class="register-content-bar">
+      <h2 class="register-content-bar-WORD">[ Welcome to TheFaceBook ]</h2>
+    </div>
+
+    <div class="register-content-register">
+      <div class="register-content-info">
+        <p>WWW.com is an online directory that connects people through social networks at highschools.</p>
+        <p>
+          We have opened up WWW.com for popular cosumption at
+          <span style="font-weight: bold;">Dr.E.P.Scarlett.</span>
+        </p>
+
+        <div class="list-items">You can use WWW.com to:</div>
+        <ul class="list-items">
+          <li>Seach for people at your school</li>
+          <li>Find out how are in your class</li>
+          <li>Look up your friend's friends</li>
+          <li>See a visualization of your social networks</li>
+        </ul>
+
+        <p class="list-items">
+          To get started, click below to register. If you have already registerd, you can log in.
+        </p>
+      </div>
+    </div>
+
+    <div class="register-button">
+      <h1 class="register-and-login-button-WORD"><a href="registerPage.html">Register</a></h1>
+    </div>
+
+    <div class="login-button">
+      <h1 class="register-and-login-button-WORD"><a href="registerPage.html">Login</a></h1>
+    </div>
+  </div>
+
+</div>
+
+   <div class="copyright" >
+        <h1 class = "copyright-WORD" id = "footer">
+            <a href="aboutPage.html" style="color:#4E6AA3">about</a> 
+            <a href="404NotFound.html" style="color:#4E6AA3">contact</a>
+            <a href="faqPage.html" style="color: #4E6AA3;">faq</a> 
+            <a href="404NotFound.html" style="color: #4E6AA3;">terms</a>
+            <a href="404NotFound.html" style="color: #4E6AA3;">Privacy</a>
+          </h1>
+        <h1 class = "copyright-WORD">a Alex Han production</h1>
+        <h1 class = "copyright-WORD"> TheFaceBook ©2026 </h1>
+    </div>
+
+
+
+  <script> //AI asist on LocalStorage and event.preventDefault
+  // get the login form
+  var loginForm = document.getElementById("loginForm");
+
+  loginForm.onsubmit = function (event) {
+    event.preventDefault(); // stop page refresh
+
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+
+    // check
+    if (email === "" || password === "") {
+      alert("Please enter your email and password."); 
+      return;
+    }
+
+    localStorage.setItem("currentUserEmail", email);
+
+    window.location.href = "userProfile.html";
+  };
+</script>
+
+</body>
+</html>
