@@ -64,11 +64,12 @@ None — built completely from scratch to demonstrate fundamental web developmen
 
 ### Welcome Page
 
-*Add screenshot here*
+<img width="1902" height="941" alt="image" src="https://github.com/user-attachments/assets/ea888301-f263-4b5f-ac7b-a560f45555a3" />
+
 
 ### Registration Page
 
-*Add screenshot here*
+*<img width="1905" height="933" alt="image" src="https://github.com/user-attachments/assets/3c76c62e-9bcb-49a6-a85d-6aa58a84a846" />*
 
 ### User Profile
 
