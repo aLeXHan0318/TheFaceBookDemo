@@ -88,7 +88,7 @@ None — built completely from scratch to demonstrate fundamental web developmen
 1. Download or clone the repository
 
 ```bash
-git clone https://github.com/aLeXHan0318/The-Face-Book-Demo-.git
+git clone https://github.com/aLeXHan0318/The-Face-Book-Demo.git
 ```
 
 2. Open the project folder
